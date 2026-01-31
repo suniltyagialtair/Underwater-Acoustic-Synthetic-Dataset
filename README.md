@@ -1,12 +1,20 @@
 # Underwater Acoustic Synthetic Dataset
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Dataset Version](https://img.shields.io/badge/Version-5.0.0-blue.svg)]()
 [![Clips](https://img.shields.io/badge/Clips-12%2C000-green.svg)]()
+[![License](https://img.shields.io/badge/License-TBD-orange.svg)]()
 
 A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification. This dataset was developed as part of the SKANN-SSL (Selective Kernel Audio Neural Networks with Self-Supervised Learning) project.
 
 ![Dataset Infographic](docs/Underwater_Acoustic_Synthetic_Dataset_Infographic.png)
+
+---
+
+## ⚠️ License Notice
+
+**The licensing terms for this dataset are to be determined by Altair Infrasec Pvt. Ltd.**
+
+Pending final license selection, please contact Altair Infrasec Pvt. Ltd. for usage permissions before using this dataset in research, commercial, or other applications.
 
 ---
 
@@ -91,7 +99,7 @@ Each vessel clip contains physically-motivated acoustic signatures:
 
 ## Dataset Access
 
-### Download from Google Drive
+### Primary Download: Google Drive
 
 **[📥 Download SKANN-SSL V5 Dataset](https://drive.google.com/drive/folders/1E6vhPnkY8x8YzZ3a-k6PnL_G9gnq5gBo)**
 
@@ -247,7 +255,9 @@ Propeller cavitation is modeled as discrete bubble collapse events:
 
 ## Citation
 
-If you use this dataset in your research, please cite:
+> **Note:** Citation format will be finalised upon license determination by Altair Infrasec Pvt. Ltd.
+
+Provisional citation:
 
 ```bibtex
 @dataset{underwater_acoustic_synthetic_2026,
@@ -257,7 +267,7 @@ If you use this dataset in your research, please cite:
   year         = {2026},
   version      = {5.0.0},
   publisher    = {GitHub},
-  url          = {https://github.com/suniltyagi/Underwater-Acoustic-Synthetic-Dataset}
+  url          = {https://github.com/suniltyagialtair/Underwater-Acoustic-Synthetic-Dataset}
 }
 ```
 
@@ -271,9 +281,9 @@ If you use this dataset in your research, please cite:
 
 ## License
 
-This dataset is released under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE).
+**To be determined by Altair Infrasec Pvt. Ltd.**
 
-You are free to share and adapt this dataset for any purpose, provided you give appropriate credit.
+Please contact Altair Infrasec Pvt. Ltd. for licensing inquiries and usage permissions.
 
 ---
 
@@ -287,4 +297,6 @@ You are free to share and adapt this dataset for any purpose, provided you give 
 
 ## Contact
 
-For questions or collaboration inquiries, please open an issue or contact Oravont Systems LLP.
+For questions or collaboration inquiries, please open an issue or contact:
+- **Oravont Systems LLP** — Technical inquiries
+- **Altair Infrasec Pvt. Ltd.** — Licensing inquiries

@@ -6,7 +6,7 @@
 
 A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification. This dataset was developed as part of the SKANN-SSL (Selective Kernel Audio Neural Networks with Self-Supervised Learning) project.
 
-![Dataset Infographic](docs/Underwater_Acoustic_Synthetic_Dataset_Infographic.png)
+![Dataset Infographic](docs/figures/Underwater_Acoustic_Synthetic_Dataset_Infographic.png)
 
 ---
 

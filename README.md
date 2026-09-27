@@ -2,19 +2,11 @@
 
 [![Dataset Version](https://img.shields.io/badge/Version-5.0.0-blue.svg)]()
 [![Clips](https://img.shields.io/badge/Clips-12%2C000-green.svg)]()
-[![License](https://img.shields.io/badge/License-TBD-orange.svg)]()
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 
 A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification. This dataset was developed as part of the SKANN-SSL (Selective Kernel Audio Neural Networks with Self-Supervised Learning) project.
 
 ![Dataset Infographic](docs/figures/Underwater_Acoustic_Synthetic_Dataset_Infographic.png)
-
----
-
-## ⚠️ License Notice
-
-**The licensing terms for this dataset are to be determined by Altair Infrasec Pvt. Ltd.**
-
-Pending final license selection, please contact Altair Infrasec Pvt. Ltd. for usage permissions before using this dataset in research, commercial, or other applications.
 
 ---
 
@@ -255,9 +247,7 @@ Propeller cavitation is modeled as discrete bubble collapse events:
 
 ## Citation
 
-> **Note:** Citation format will be finalised upon license determination by Altair Infrasec Pvt. Ltd.
-
-Provisional citation:
+If you use this dataset, please cite:
 
 ```bibtex
 @dataset{underwater_acoustic_synthetic_2026,
@@ -281,9 +271,12 @@ Provisional citation:
 
 ## License
 
-**To be determined by Altair Infrasec Pvt. Ltd.**
+[![CC BY 4.0][cc-by-image]][cc-by]
 
-Please contact Altair Infrasec Pvt. Ltd. for licensing inquiries and usage permissions.
+This project is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 
 ---
 
@@ -299,4 +292,3 @@ Please contact Altair Infrasec Pvt. Ltd. for licensing inquiries and usage permi
 
 For questions or collaboration inquiries, please open an issue or contact:
 - **Oravont Systems LLP** — Technical inquiries
-- **Altair Infrasec Pvt. Ltd.** — Licensing inquiries

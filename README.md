@@ -3,8 +3,11 @@
 [![Dataset Version](https://img.shields.io/badge/Version-5.0.0-blue.svg)]()
 [![Clips](https://img.shields.io/badge/Clips-12%2C000-green.svg)]()
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
+[![DOI](https://img.shields.io/badge/DOI-10.57967%2Fhf%2F11191-blue.svg)](https://doi.org/10.57967/hf/11191)
 
-A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification. This dataset was developed as part of the SKANN-SSL (Selective Kernel Audio Neural Networks with Self-Supervised Learning) project.
+A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification. This dataset was developed as part of the SKANN-SSL (Selective-Kernel Acoustic Neural Network with Self-Supervised Learning) project.
+
+Developed by [Sunil Tyagi](https://suniltyagi.in/) at [Oravont Systems LLP](https://oravontsystems.com/), Noida, India. The generation physics and verification calculations are documented in the [dataset note on suniltyagi.in](https://suniltyagi.in/notes/synthetic-dataset/).
 
 ![Dataset Infographic](docs/figures/Underwater_Acoustic_Synthetic_Dataset_Infographic.png)
 
@@ -91,7 +94,13 @@ Each vessel clip contains physically-motivated acoustic signatures:
 
 ## Dataset Access
 
-### Primary Download: Google Drive
+### Primary Download: Hugging Face
+
+**[📥 huggingface.co/datasets/suniltyagi/underwater-acoustic-synthetic-dataset](https://huggingface.co/datasets/suniltyagi/underwater-acoustic-synthetic-dataset)** · DOI [10.57967/hf/11191](https://doi.org/10.57967/hf/11191)
+
+On Hugging Face the clips are stored in subfolders of 1,000 (`waveforms/00/` … `waveforms/11/`, likewise `tensors/`), because the Hub allows at most 10,000 files per folder; the manifest there gives the subfolder paths. `pairing_manifest.csv` is included there.
+
+### Alternative: Google Drive
 
 **[📥 Download SKANN-SSL V5 Dataset](https://drive.google.com/drive/folders/1E6vhPnkY8x8YzZ3a-k6PnL_G9gnq5gBo)**
 
@@ -227,12 +236,14 @@ Ambient ocean noise follows the piecewise parametric Knudsen model:
 NL(f) = a · log₁₀(f) + b   [dB re 1 µPa²/Hz]
 ```
 
-| Sea State | Description | SPL (dB) |
-|-----------|-------------|----------|
+| Sea State | Description | SPL (dB re 1 µPa) |
+|-----------|-------------|-------------------|
 | 0 | Calm | 77.6 |
-| 1 | Light air | 83.6 |
-| 3 | Gentle breeze | 93.6 |
+| 1 | Light air | 86.8 |
+| 3 | Gentle breeze | 97.2 |
 | 6 | Strong breeze | 103.6 |
+
+Levels are the mean sea-noise SPL of each sea state in `master_dataset_manifest.csv` (column `sea_spl_db`).
 
 ### Cavitation Model
 
@@ -251,21 +262,25 @@ If you use this dataset, please cite:
 
 ```bibtex
 @dataset{underwater_acoustic_synthetic_2026,
-  author       = {Oravont Systems LLP},
+  author       = {Tyagi, Sunil},
   title        = {Underwater Acoustic Synthetic Dataset: Physics-Based 
                   Vessel Noise Signatures for Self-Supervised Learning},
   year         = {2026},
   version      = {5.0.0},
-  publisher    = {GitHub},
-  url          = {https://github.com/suniltyagialtair/Underwater-Acoustic-Synthetic-Dataset}
+  publisher    = {Hugging Face},
+  doi          = {10.57967/hf/11191},
+  url          = {https://huggingface.co/datasets/suniltyagi/underwater-acoustic-synthetic-dataset},
+  note         = {Oravont Systems LLP. Source repository: https://github.com/suniltyagialtair/Underwater-Acoustic-Synthetic-Dataset}
 }
 ```
 
 ---
 
-## Related Projects
+## Related Projects and Pages
 
-- **SKANN-SSL** — Selective Kernel Audio Neural Networks with Self-Supervised Learning (private repository)
+- **Dataset note** — [A Physics-Grounded Synthetic Underwater Acoustic Dataset](https://suniltyagi.in/notes/synthetic-dataset/) on suniltyagi.in: design, generation physics and verification
+- **Oravont Systems LLP** — [Deep learning for underwater domain awareness](https://oravontsystems.com/deep-learning/#synthetic), where the dataset serves pretraining · [Open UDA tools and data](https://oravontsystems.com/tools/#synthetic-dataset)
+- **SKANN-SSL** — Selective-Kernel Acoustic Neural Network with Self-Supervised Learning (private repository); the architecture is described in arXiv:2609.07399
 
 ---
 
@@ -291,4 +306,5 @@ This project is licensed under a [Creative Commons Attribution 4.0 International
 ## Contact
 
 For questions or collaboration inquiries, please open an issue or contact:
-- **Oravont Systems LLP** — Technical inquiries
+- **Sunil Tyagi** — [suniltyagi.in](https://suniltyagi.in/)
+- **Oravont Systems LLP** — [oravontsystems.com/contact](https://oravontsystems.com/contact/)

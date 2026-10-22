@@ -280,7 +280,7 @@ If you use this dataset, please cite:
 
 - **Dataset note** — [A Physics-Grounded Synthetic Underwater Acoustic Dataset](https://suniltyagi.in/notes/synthetic-dataset/) on suniltyagi.in: design, generation physics and verification
 - **Oravont Systems LLP** — [Deep learning for underwater domain awareness](https://oravontsystems.com/deep-learning/#synthetic), where the dataset serves pretraining · [Open UDA tools and data](https://oravontsystems.com/tools/#synthetic-dataset)
-- **SKANN-SSL** — Selective-Kernel Acoustic Neural Network with Self-Supervised Learning (private repository); the architecture is described in arXiv:2609.07399
+- **SKANN-SSL** — Selective-Kernel Acoustic Neural Network with Self-Supervised Learning (private repository); the architecture is described in [arXiv:2609.07399](https://arxiv.org/abs/2609.07399)
 
 ---
 

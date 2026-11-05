@@ -5,9 +5,11 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![DOI](https://img.shields.io/badge/DOI-10.57967%2Fhf%2F11191-blue.svg)](https://doi.org/10.57967/hf/11191)
 
-A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification. This dataset was developed as part of the SKANN-SSL (Selective-Kernel Acoustic Neural Network with Self-Supervised Learning) project.
+A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification, created by [Sunil Tyagi](https://suniltyagi.in/) ([Oravont Systems LLP](https://oravontsystems.com/), Noida, India) for pretraining [SKANN-SSL](https://github.com/suniltyagi/SKANN-SSL), a separate detection-and-classification model.
 
-Developed by [Sunil Tyagi](https://suniltyagi.in/) at [Oravont Systems LLP](https://oravontsystems.com/), Noida, India. The generation physics and verification calculations are documented in the [dataset note on suniltyagi.in](https://suniltyagi.in/notes/synthetic-dataset/).
+**Licence: CC BY 4.0**
+
+The generation physics and verification calculations are documented in the [dataset note on suniltyagi.in](https://suniltyagi.in/notes/synthetic-dataset/).
 
 ![Dataset Infographic](docs/figures/Underwater_Acoustic_Synthetic_Dataset_Infographic.png)
 
@@ -96,18 +98,18 @@ Each vessel clip contains physically-motivated acoustic signatures:
 
 ### Primary Download: Hugging Face
 
-**[📥 huggingface.co/datasets/suniltyagi/underwater-acoustic-synthetic-dataset](https://huggingface.co/datasets/suniltyagi/underwater-acoustic-synthetic-dataset)** · DOI [10.57967/hf/11191](https://doi.org/10.57967/hf/11191)
+**[📥 Download the dataset (Hugging Face, DOI 10.57967/hf/11191)](https://huggingface.co/datasets/suniltyagi/underwater-acoustic-synthetic-dataset)** · huggingface.co/datasets/suniltyagi/underwater-acoustic-synthetic-dataset · DOI [10.57967/hf/11191](https://doi.org/10.57967/hf/11191)
 
 On Hugging Face the clips are stored in subfolders of 1,000 (`waveforms/00/` … `waveforms/11/`, likewise `tensors/`), because the Hub allows at most 10,000 files per folder; the manifest there gives the subfolder paths. `pairing_manifest.csv` is included there.
 
 ### Alternative: Google Drive
 
-**[📥 Download SKANN-SSL V5 Dataset](https://drive.google.com/drive/folders/1E6vhPnkY8x8YzZ3a-k6PnL_G9gnq5gBo)**
+**[📥 Google Drive copy of the dataset](https://drive.google.com/drive/folders/1E6vhPnkY8x8YzZ3a-k6PnL_G9gnq5gBo)** (folder `Underwater-Acoustic-Synthetic-Dataset`, as in the paths below)
 
 ### File Structure
 
 ```
-SKANN_SSL_V5_Dataset/
+Underwater-Acoustic-Synthetic-Dataset/
 ├── waveforms/
 │   ├── clip_000000.npy
 │   ├── clip_000001.npy
@@ -184,7 +186,7 @@ class UnderwaterAcousticDataset(Dataset):
         }
 
 # Usage
-dataset = UnderwaterAcousticDataset('./SKANN_SSL_V5_Dataset')
+dataset = UnderwaterAcousticDataset('./Underwater-Acoustic-Synthetic-Dataset')
 loader = DataLoader(dataset, batch_size=32, shuffle=True)
 ```
 
@@ -280,7 +282,8 @@ If you use this dataset, please cite:
 
 - **Dataset note** — [A Physics-Grounded Synthetic Underwater Acoustic Dataset](https://suniltyagi.in/notes/synthetic-dataset/) on suniltyagi.in: design, generation physics and verification
 - **Oravont Systems LLP** — [Deep learning for underwater domain awareness](https://oravontsystems.com/deep-learning/#synthetic), where the dataset serves pretraining · [Open UDA tools and data](https://oravontsystems.com/tools/#synthetic-dataset)
-- **SKANN-SSL** — Selective-Kernel Acoustic Neural Network with Self-Supervised Learning (private repository); the architecture is described in [arXiv:2609.07399](https://arxiv.org/abs/2609.07399)
+- **SKANN-SSL** — [github.com/suniltyagi/SKANN-SSL](https://github.com/suniltyagi/SKANN-SSL): Selective-Kernel Acoustic Neural Network with Self-Supervised Learning, a selective-kernel encoder pretrained on this dataset (Barlow Twins) for vessel detection and classification. It is a separate model from this dataset.
+- **SKANN for vessel re-identification** — a separate encoder, described in [arXiv:2609.07399](https://arxiv.org/abs/2609.07399)
 
 ---
 

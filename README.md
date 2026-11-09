@@ -262,6 +262,10 @@ Propeller cavitation is modeled empirically, as a train of decaying bursts, one 
 - **Cavitation timing.** The 200 kHz burst track was decimated by 12 rather than 12.5 (`200000 // 16000`), giving 83,334 samples that were cut to 80,000. In every clip the cavitation component runs about 4% slow relative to the tonal lines: the track is stretched in time by 12.5/12 ≈ 1.042, so bursts recur at 0.96 × BPF, carriers appear at 0.96 × their drawn frequency, and τ becomes 52–208 µs. Bursts from the last 0.2 s of the 5 s drawn are dropped, although `n_cavitation_bursts` counts them. Tonal, broadband and sea-noise components are unaffected.
 - **Tonal line prominence.** Each tonal is placed in one 0.2 Hz bin with a nominal amplitude of at most 1.5, while the broadband term puts about 2.4 into every bin near 2 Hz for a cargo ship. In a 5 s FFT of a released clip the median tonal therefore sits at the local floor, and the best line stands only +5 to +11 dB above it, depending on class (sea state 0 / 6): small craft +11 / +10 dB, fishing +9 / +8, cargo +5 / +6, tanker +5 / +5. The +6 dB SNR is defined on whole-band RMS, not on individual lines, so LOFAR line detection is marginal for cargo and tanker clips.
 
+### Generator
+
+[`generator/`](generator/) holds the code that produced v5.0.0, extracted verbatim from the generation notebook, with the Knudsen sea-state files it reads. It reproduces the released clips byte for byte: 30 of 30 clips checked with `generator/verify_release.py`, covering every vessel class, sea state and cavitation level, and ambient-only clips. The 31 KB `ship_noise.py` in SKANN-SSL (`stages/stage_minus1`) is not the v5 release generator. The code in `generator/` is MIT-licensed ([`generator/LICENSE`](generator/LICENSE)); the dataset and documentation are CC BY 4.0.
+
 ---
 
 ## Citation

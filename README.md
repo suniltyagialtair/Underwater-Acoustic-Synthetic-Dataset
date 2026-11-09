@@ -87,7 +87,7 @@ Each vessel clip contains physically-motivated acoustic signatures:
 
 ### Broadband Components
 - **Flow Noise** — Hydrodynamic turbulence with power-law rolloff
-- **Cavitation Bursts** — Physical bubble collapse model at 200 kHz, blade-gated timing
+- **Cavitation Bursts** — Empirical burst model at 200 kHz (decaying sinusoids, one per blade passage), blade-gated timing; see Known issues
 
 ### Ambient Noise
 - **Knudsen Sea Noise** — Digitised curves for 4 sea states (calm to strong breeze)
@@ -249,12 +249,18 @@ Levels are the mean sea-noise SPL of each sea state in `master_dataset_manifest.
 
 ### Cavitation Model
 
-Propeller cavitation is modeled as discrete bubble collapse events:
+Propeller cavitation is modeled empirically, as a train of decaying bursts, one per blade passage:
 
 - **Generation Rate:** 200 kHz (captures µs-scale physics)
-- **Collapse Time:** 50–200 µs (Rayleigh collapse)
+- **Burst Decay Time:** τ drawn uniformly from 50–200 µs (median 125 µs); envelope e^(−t/τ) on a carrier at the class cavitation peak × 0.8–1.2, cut at 10τ
 - **Timing:** Blade-gated with swell modulation (0.05–0.15 Hz)
 - **Output:** Decimated to 16 kHz with anti-aliasing
+
+#### Known issues in v5.0.0
+
+- **Cavitation level.** The tonal and broadband components carry the inverse FFT's n/√2 scaling (×56,569, +95 dB); the 200 kHz burst train does not. The cavitation component is therefore about 60 dB (small craft) to about 90 dB (tanker) below the clip level at full intensity, and about 10 dB lower again at intensity 0.333. It cannot be heard or measured against the sea and flow noise, so `cavitation_intensity` has no practical effect on the waveforms, and `has_cavitation`, `cavitation_peak_freq` and `n_cavitation_bursts` describe a component that is effectively absent.
+- **Cavitation timing.** The 200 kHz burst track was decimated by 12 rather than 12.5 (`200000 // 16000`), giving 83,334 samples that were cut to 80,000. In every clip the cavitation component runs about 4% slow relative to the tonal lines: the track is stretched in time by 12.5/12 ≈ 1.042, so bursts recur at 0.96 × BPF, carriers appear at 0.96 × their drawn frequency, and τ becomes 52–208 µs. Bursts from the last 0.2 s of the 5 s drawn are dropped, although `n_cavitation_bursts` counts them. Tonal, broadband and sea-noise components are unaffected.
+- **Tonal line prominence.** Each tonal is placed in one 0.2 Hz bin with a nominal amplitude of at most 1.5, while the broadband term puts about 2.4 into every bin near 2 Hz for a cargo ship. In a 5 s FFT of a released clip the median tonal therefore sits at the local floor, and the best line stands only +5 to +11 dB above it, depending on class (sea state 0 / 6): small craft +11 / +10 dB, fishing +9 / +8, cargo +5 / +6, tanker +5 / +5. The +6 dB SNR is defined on whole-band RMS, not on individual lines, so LOFAR line detection is marginal for cargo and tanker clips.
 
 ---
 

@@ -4,11 +4,11 @@
 [![Clips](https://img.shields.io/badge/Clips-12%2C000-green.svg)]()
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](http://creativecommons.org/licenses/by/4.0/)
 [![DOI](https://img.shields.io/badge/DOI-10.57967%2Fhf%2F11191-blue.svg)](https://doi.org/10.57967/hf/11191)
-Last reviewed: 14 November 2026.
+
 
 A physics-based synthetic underwater acoustic dataset for machine learning research in vessel detection and classification, created by [Sunil Tyagi](https://suniltyagi.in/) ([Oravont Systems LLP](https://oravontsystems.com/), Noida, India) for pretraining [SKANN-SSL](https://github.com/suniltyagi/SKANN-SSL), a separate detection-and-classification model.
 
-**Licence: CC BY 4.0**
+**Licence: CC BY 4.0** · Last reviewed: 14 November 2026.
 
 The generation physics and verification calculations are documented in the [dataset note on suniltyagi.in](https://suniltyagi.in/notes/synthetic-dataset/).
 
